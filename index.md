@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Super Bowl Capstone Web Page
-tagline: WIP
+title: Rough Draft
+tagline: 
 description: Current Rough Draft for DSC180B
 ---
