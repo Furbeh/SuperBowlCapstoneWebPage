@@ -13,6 +13,7 @@ Description of population and sample data.
 
 ## Features
 Descriptions of features gathered for analysis.
+Both visualization examples described in the checkpoint would go here.
 
 ## Model
 descriptions of model and predictor/rater of how likely a commercial is a superbowl commercial
