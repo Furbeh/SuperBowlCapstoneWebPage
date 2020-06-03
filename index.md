@@ -22,11 +22,11 @@ Once gathered, we extracted a variety of numeric values from the videos on which
 
 ![Spectral Rolloff SD Histogram](/assets/Spectral Rolloffs histogram.png)
 
-<p style="text-align: center;"> *Spectral rolloff is the frequency value that is greater than exactly 85% of the remaining frequency energy of an audio frame. Rolloff standard deviations depict the variety in this value over the duration of the commercials.* </p>
+<p style="text-align: center;"><i> Spectral rolloff is the frequency value that is greater than exactly 85% of the remaining frequency energy of an audio frame. Rolloff standard deviations depict the variety in this value over the duration of the commercials. </i></p>
 
 ![Spectral Rolloff Average Comparison](/assets/Spectral Rolloff Comparison.png)
 
-<p style="text-align: center;"> *Two spectrograms for commercial with differing spectral rolloff averages are shown. On the left, low spectral rolloff average, right high spectral rolloff average. The corresponding audio files would have a notable average frequency difference, with the left having a lower frequency.* </p>
+<p style="text-align: center;"><i> Two spectrograms for commercial with differing spectral rolloff averages are shown. On the left, low spectral rolloff average, right high spectral rolloff average. The corresponding audio files would have a notable average frequency difference, with the left having a lower frequency. </i></p>
 
 For the video features, instead of all of them being an average over every single frame in a commercial, we instead used a module to detect the scene cuts and used the midpoint frame of each scene. This was mainly due to minimizing the length of computation for each feature. However, the midpoint of each scene should still be quite similar to the rest of the scene, as scene cuts are measured by their difference in pixels, thus each midpoint should act as a good representation for each scene as a whole. As a benefit and drawback to this, the length of each scene is ignored as a potential feature, however their averages can still be found using the number of scenes and the overall length of the given commercial.
 
@@ -36,23 +36,23 @@ We also found the average Hue, Saturation, and Brightness values for each commer
 
 ![Brightness Histogram](/assets/mean brightness histogram.png)
 
-<p style="text-align: center;"> *A histogram showing the percentage frequencies of average brightness, categorized. No significant difference between the categories is seen.* </p>
+<p style="text-align: center;"><i> A histogram showing the percentage frequencies of average brightness, categorized. No significant difference between the categories is seen. </i></p>
 
 ![Brightness Comparison](/assets/brightness comparison.png)
 
-<p style="text-align: center;"> *Two frames from 2 separate commercials, with left being low brighness from a superbowl commercial, and right being high brightness from a non-superbowl commercial.* </p>
+<p style="text-align: center;"><i> Two frames from 2 separate commercials, with left being low brighness from a superbowl commercial, and right being high brightness from a non-superbowl commercial. </i></p>
 
 ## Models and Their Effectiveness
 
 The two models we used were a logistic regression and random forest model. Both used all the numerical features generated, with scaling for each feature.
 
-| Logistic Regression |       | Random Forest |       |
-|---------------------|-------|---------------|-------|
-| Accuracy (%)        |       | Accuracy (%)  |       |
-| Combined            | 87.3% | Combined      | 90.6% |
-| Superbowl           | 63.4% | Superbowl     | 69.5% |
-| Other               | 96%   | Other         | 97.5% |
-| F1 Score:           | .727  |               |       |
+| Logistic Regression |       |    | Random Forest |       |
+|---------------------|-------|----|---------------|-------|
+| Accuracy (%)        |       |    | Accuracy (%)  |       |
+| Combined            | 87.3% |    | Combined      | 90.6% |
+| Superbowl           | 63.4% |    | Superbowl     | 69.5% |
+| Other               | 96%   |    | Other         | 97.5% |
+| F1 Score:           | .727  |    |               |       |
 
 Our overall accuracies for both models were notably effective, however random forest was more effective than logistic regression. The superbowl accuracies for both were less accurate, thus showing that both models were either overfitted for non-superbowl commercials or had features that were not able to represent any notable differences between the two. The former reason would make the most sense, as there were three times as many non-superbowl commercials as there were superbowl commercials.
 
