@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Rough Draft
-tagline: 
-description: Current Rough Draft for DSC180B
+title: What Makes a Super Bowl Commercial Super?
+tagline: An analysis into commercials.
+description: For DSC180B
 ---
 
 ## Introduction
