@@ -34,7 +34,7 @@ For each scene, we used OCR and Face detection to get the average counts of word
 
 We also found the average Hue, Saturation, and Brightness values for each commercial as well, following the previous Mondrian Complexity analysis we performed in the class. We decided not to use the edge score previously implemented as we felt that it wasn’t likely to have any merit in the model.
 
-![Brightness Histogram](/assets/brightness histogram.png)
+![Brightness Histogram](/assets/mean brightness histogram.png)
 
 <p style="text-align: center;"> *A histogram showing the percentage frequencies of average brightness, categorized. No significant difference between the categories is seen.* </p>
 
